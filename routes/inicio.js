@@ -35,4 +35,11 @@ router.get('/',function(req,res,next){
 	});
 	});
 
+	router.put('/:jugueteId',(req,res,next)=>{
+	Juguete.findByIdAndUpdate({'_id':(req.params.jugueteId)},(err,productUpdate)=>{
+		if(err) res.status(404).json(err);
+		else res.status(200).json(productUpdate);
+	});
+	});
+
 module.exports = router;
