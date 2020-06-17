@@ -24,5 +24,15 @@ router.get('/',function(req,res,next){
 	});
 	});
 
+	router.delete('/',(req,res,next)=>{
+	res.status(405).json({mensaje:'Accion no permitida'})
+	});
+
+	router.delete('/:jugueteId',(req,res,next)=>{
+	Juguete.findOneAndDelete({'_id':(req.params.jugueteId)},(err,datos)=>{
+		if(err) res.status(404).json(err);
+		else res.status(200).json(datos);
+	});
+	});
 
 module.exports = router;
