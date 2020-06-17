@@ -1,0 +1,35 @@
+
+<div class="container">
+	<div class="jumbotron">
+	<h1 class="display-3">Juguetería</h1>
+	<p class="lead">Los mejores Juguetes.</p>
+	<nav  class="navbar navbar-dark bg-dark">
+  <a class="nav-link active" href="/">Agregar Nuevo</a>
+<a class="nav-link active" href="/">Eliminar</a>
+	<form class="form-inline">
+	 <input class="form-control mr-sm-2" type="search" placeholder="Busqueda" aria-label="Search">
+	 <button class="btn btn-outline-primary" type="submit">Buscar</button>
+ </form>
+</nav>
+	<hr>
+	<div class="card-columns">
+		<a class="twitter-timeline"  data-width="340" data-height="1000" data-theme="dark" href="https://twitter.com/FESAragonUNAM?ref_src=twsrc%5Etfw">Tweets by FESAragonUNAM</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+		{{#each juguetes}}
+	<div class="card">
+		<img src="{{foto}}" class="card-img-top">
+		<div class="card-body">
+			<h5 align="center" class="card-tittle">{{nombre}}</h5>
+			<p align="justify" class="card-text" >{{descripcion}}</p>
+			<ul>
+				<li>Material: {{material}}</li>
+				<li>Tamaño: {{tamanio}}</li>
+				<li>Modelo: {{modelo}}</li>
+				<li>Pilas: {{pilas}}</li>
+				<li>Compañia: {{compania}}</li>
+			</ul>
+		</div>
+	</div>
+	{{/each}}
+	</div>
+</div>
+</div>
